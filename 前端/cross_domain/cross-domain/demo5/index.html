@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>跨域解决方案demo5-window.domain</title>
+    <link rel="stylesheet" href="">
+    <iframe id="iframe" width="100%" height="300px" src="http://sub.test.cn/index.html" onload="test()"></iframe>
+    </script>
+</head>
+
+<body>
+    <h1>
+    我是demo5
+</h1>
+    <script type="text/javascript">
+    document.domain = 'test.cn'; //设置成主域
+
+    function test() {
+        var iframe = document.getElementById('iframe');
+        var win = iframe.contentWindow; //可以获取到iframe里的window对象，但该window对象的属性和方法几乎是不可用的
+        var doc = win.document; //这里获取不到iframe里的document对象
+        var name = win.name; //这里同样获取不到window对象的name属性
+    }
+    </script>
+</body>
+
+</html>

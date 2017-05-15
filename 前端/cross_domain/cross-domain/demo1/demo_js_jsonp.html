@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>跨域解决方案demo1-模拟jsonp</title>
+    <link rel="stylesheet" href="">
+    
+    <script>
+    window.getServerData = function(jsondata) {
+        //处理获得的json数据
+        window.serData = jsondata;
+    }
+
+    function getData() {
+        console.log("接口数据");
+        console.log(serData);
+    }
+    </script>
+</head>
+
+<body>
+    <div>
+        <button id="btn" onclick="getData()">test</button>
+    </div>
+    <div>
+        <div>
+            服务端相应内容：
+        </div>
+        <div>
+        </div>
+    </div>
+</body>
+<script src="http://localhost:8080/data.php?callback=getServerData"></script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>跨域解决方案demo2-CORS</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    $(function() {
+
+        $("#btnTest").click(function(event) {
+            // $.getJSON('http://localhost:8080/data.php?callback=11', {
+            //     param1: 'value1'
+            // }, function(json, textStatus) {
+            //     console.log("success:" + json);
+            // });
+            // 
+
+
+
+            $.ajax({
+                    url: 'http://localhost:8080/data.php',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        callback: "getdata"
+                    }
+                })
+                .done(function(data) {
+                    console.log("done:");
+                    console.log(data);
+                })
+                .fail(function(data) {
+                    console.log("fail:");
+                    console.log(data);
+                })
+                .always(function(data) {
+                    console.log("always:");
+                    console.log(data.responseText);
+                });
+        });
+
+
+
+    })
+    </script>
+
+    <body>
+        <div>
+            <button id="btnTest">test</button>
+        </div>
+        <div>
+            <div>
+                服务端相应内容：
+            </div>
+            <div id="res">
+            </div>
+        </div>
+    </body>
+    </body>
+
+</html>

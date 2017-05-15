@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>跨域解决方案demo3-服务端代理</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    $(function function_name(argument) {
+
+        $("#btnTest").click(function(datajson) {
+
+            $.ajax({
+                    url: 'data.php',
+                    //url: 'http://localhost:8080/data.php',
+                    type: 'post',
+                    dataType: 'json'
+                })
+                .done(function(data) {
+                    console.log("done:");
+                    console.log(data);
+                })
+                .fail(function(data) {
+                    console.log("fail:");
+                    console.log(data);
+                })
+                .always(function(data) {
+                    console.log("always:");
+                    console.log(data.responseText);
+                });
+
+        });
+
+    })
+    </script>
+
+    <body>
+        <div>
+            <button id="btnTest">test</button>
+        </div>
+        <div>
+            <div>
+                服务端相应内容：
+            </div>
+        </div>
+    </body>
+    </body>
+
+</html>
