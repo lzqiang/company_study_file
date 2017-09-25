@@ -1,0 +1,18 @@
+1.线上服务器：Tengine
+
+2.框架：spring+rose
+rabbitmq
+
+缓存
+分布式缓存：redis
+本地缓存：1.Ehcache 2.CacheBuilder
+
+
+3.项目构建 maven
+
+4.代码托管：Git
+
+3.前端页面：jsp
+
+4.js：bootstrap  require.js
+前端：Fekit-TTP
